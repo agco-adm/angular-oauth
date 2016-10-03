@@ -72,7 +72,8 @@
             response_type: config.responseType || RESPONSE_TYPE,
             client_id: config.clientId,
             redirect_uri: config.redirectUri,
-            scope: config.scopes.join(",")
+            scope: config.scopes.join(","),
+            state: window.location.href
           };
         };
 
@@ -240,7 +241,7 @@
       if (params.access_token) {
         localStorage.accessToken = params.access_token;
         localStorage.tokenExpires = params.expires_in;
-        window.location.href = '/';
+        window.location.href = params.state;
       }
     });
 
