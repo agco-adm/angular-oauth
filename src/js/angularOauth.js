@@ -73,7 +73,7 @@
             client_id: config.clientId,
             redirect_uri: config.redirectUri,
             scope: config.scopes.join(","),
-            state: window.location.href
+            state: encodeURIComponent(window.location.href)
           };
         };
 
