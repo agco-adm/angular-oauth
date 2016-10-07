@@ -238,6 +238,8 @@
       var queryString = $location.path().replace(/[^\/]*\//, ''); // preceding slash omitted
       var params = parseKeyValue(queryString);
 
+      console.log(params, queryString);
+
       if (params.access_token) {
         localStorage.accessToken = params.access_token;
         localStorage.tokenExpires = params.expires_in;
